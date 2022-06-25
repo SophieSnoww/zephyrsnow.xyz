@@ -1,0 +1,9 @@
+.minecraft-image-utility {
+  justify-content: center !important;
+}
+
+.minecraft-image-utility-content {
+  padding: 40px 60px;
+  background-color: #000a;
+  border-radius: 20px;
+}

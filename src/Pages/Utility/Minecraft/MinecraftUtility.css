@@ -1,0 +1,9 @@
+.minecraft-utility-homepage *, .minecraft-image-utility * {
+  font-family: minecraft !important;
+  line-height: 1.75ch;
+  word-spacing: 0.5ch;
+}
+
+.symbol {
+  font-family: 'Material Symbols Outlined' !important;
+}

@@ -1,0 +1,15 @@
+.utility-page-text-container {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.utility-page-text {
+  padding: 20px 40px;
+  background-color: #000a;
+  border-radius: 20px;
+  width: 25vw;
+}
