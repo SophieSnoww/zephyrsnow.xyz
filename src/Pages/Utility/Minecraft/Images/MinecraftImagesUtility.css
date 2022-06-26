@@ -3,7 +3,24 @@
 }
 
 .minecraft-image-utility-content {
-  padding: 40px 60px;
+  padding: 40px;
   background-color: #000a;
   border-radius: 20px;
+  width: 50vw;
+  height: 50vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+/* .minecraft-image-utility-content .container + .container {
+  margin-top: 50px;
+} */
+
+.minecraft-image-utility-content .input-title {
+  width: 100%;
+  font-size: 1.2em;
+  text-align: center
 }

@@ -1,5 +1,7 @@
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { slideLeft } from '../Animations';
 import './SideNav.css';
 
 function SideNav (props) {
@@ -38,14 +40,20 @@ function SideNav (props) {
   };
 
   return (
-    <div className={`side-nav ${open ? '' : 'inactive'}`}>
+    <motion.div
+      className={`side-nav ${open ? '' : 'inactive'}`}
+      initial='initial'
+      animate='animate'
+      exit='exit'
+      variants={slideLeft}
+    >
       <div className='side-nav-content'>
         <div className={`side-nav-button open-nav-button symbol ${open ? 'hidden' : ''}`} onClick={(e) => toggle(e)}>menu</div>
         <div className={`side-nav-button close-nav-button symbol ${open ? '' : 'hidden'}`} onClick={(e) => toggle(e)}>close</div>
         <div className='side-nav-title'>{props.title}</div>
         {pageElements}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

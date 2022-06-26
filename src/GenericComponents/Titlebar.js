@@ -1,4 +1,6 @@
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { fadeUp } from '../Animations';
 
 function TitleBar (props) {
   const pages = props.pages
@@ -14,7 +16,7 @@ function TitleBar (props) {
         },
         {
           text: 'Characters',
-          link: '/links'
+          link: '/characters'
         },
         {
           text: 'Utilities',
@@ -30,9 +32,15 @@ function TitleBar (props) {
   }
 
   return (
-    <div className='title-bar'>
+    <motion.div
+      className='title-bar'
+      initial='initial'
+      animate='animate'
+      exit='exit'
+      variants={fadeUp}
+    >
       {pageElements}
-    </div>
+    </motion.div>
   );
 }
 
