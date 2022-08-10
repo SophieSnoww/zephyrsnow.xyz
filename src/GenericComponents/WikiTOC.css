@@ -1,0 +1,28 @@
+.table-of-contents {
+  background-color: #f4f4f4;
+  border: 1px solid #aaa;
+  padding: 10px;
+  width: 180px;
+  font-size: 0.9em;
+}
+
+.toc-title {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.toc-list {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+}
+
+.toc-list li {
+  margin: 0;
+  padding: 0;
+}
+
+.toc-list li + li {
+  margin-top: 5px;
+}

@@ -15,8 +15,8 @@ function TitleBar (props) {
           link: '/links'
         },
         {
-          text: 'Characters',
-          link: '/characters'
+          text: 'Wiki',
+          link: '/wiki'
         },
         {
           text: 'Utilities',

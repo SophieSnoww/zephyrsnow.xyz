@@ -6,7 +6,8 @@ import HomePage from './Pages/Home/Home';
 import './AppContainer.css';
 import LinksPage from './Pages/Links/Links';
 import { AnimatePresence } from 'framer-motion';
-import CharactersPage from './Pages/Characters/Characters';
+import WikiPage from './Pages/Wiki/Wiki';
+import WikiRouter from './Pages/Wiki/WikiRouter';
 
 function App () {
   const location = useLocation();
@@ -16,7 +17,10 @@ function App () {
       <AnimatePresence exitBeforeEnter>
         <Routes location={location} key={location.pathname}>
           <Route path='/links' element={<LinksPage />} />
-          <Route path='/characters' element={<CharactersPage />} />
+
+          <Route path='/wiki' element={<WikiPage />} />
+          <Route path='/wiki/*' element={<WikiRouter />} />
+          {/* <Route path='/wiki/zephyr' element={<Zephyr />} /> */}
 
           <Route path='/utility/minecraft/images' element={<MinecraftImagesUtility />} />
 

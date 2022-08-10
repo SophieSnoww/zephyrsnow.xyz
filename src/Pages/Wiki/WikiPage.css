@@ -1,0 +1,82 @@
+.page-body {
+  flex: 1 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+p {
+  appearance: none;
+  margin: 0;
+  padding: 0;
+}
+
+p + * {
+  margin-top: 10px;
+}
+
+a {
+  color: steelblue;
+  transition: none;
+  padding: 2px 0px;
+}
+
+a:hover {
+  color: steelblue;
+  filter: brightness(0.5);
+}
+
+.wiki-page-content {
+  width: 100%;
+  flex: 1 0;
+  padding: 1.25em;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.wiki-page-title {
+  font-family:'Times New Roman', Times, serif;
+  font-size: 2em;
+  width: 100%;
+  border-bottom: 1px solid #aaa;
+  position: relative;
+  margin-bottom: 1.4em;
+}
+
+.wiki-page-title::after {
+  content: 'From Wikiphyr, the free infodump';
+  position: absolute;
+  top: 125%;
+  left: 0;
+  font-size: 0.4em;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+}
+
+.wiki-page-text {
+  font-size: 14px;
+  width: 100%;
+}
+
+.wiki-header {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.wiki-header-left {
+  flex: 1 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.wiki-header-text {
+  margin-bottom: 10px;
+}
