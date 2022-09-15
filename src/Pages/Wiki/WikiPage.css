@@ -7,23 +7,23 @@
   flex-direction: column;
 }
 
-p {
+.wiki-page p {
   appearance: none;
   margin: 0;
   padding: 0;
 }
 
-p + * {
+.wiki-page p + * {
   margin-top: 10px;
 }
 
-a {
+.wiki-page a {
   color: steelblue;
   transition: none;
   padding: 2px 0px;
 }
 
-a:hover {
+.wiki-page a:hover {
   color: steelblue;
   filter: brightness(0.5);
 }
