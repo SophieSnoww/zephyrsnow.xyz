@@ -1,0 +1,13 @@
+/* font-family: Satoshi, sans-serif; */
+/* font-family: Valorant, sans-serif */
+/* font-family: Alagard, sans-serif */
+
+@font-face {
+  font-family: Valorant;
+  src: url('./fonts/valorant.ttf');
+}
+
+@font-face {
+  font-family: Alagard;
+  src: url('./fonts/alagard.ttf');
+}
