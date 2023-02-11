@@ -1,43 +1,410 @@
-/* color palette from <https://github.com/vuejs/theme> */
 :root {
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
+  --bg: #fff;
+  --bg-dark: #ddd;
+  --fg: #222;
+  --ac: #1d6;
 
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
-
-  --vt-c-indigo: #2c3e50;
-
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
-
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+  --red: #f32;
+  --yellow: #dd2;
+  --green: #1f3;
+  --blue: #28f;
+  --purple: #a2f;
 }
 
+/* ========== Styling Everything ========== */
 * {
   box-sizing: border-box;
   margin: 0;
   position: relative;
   font-weight: normal;
+  
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* ========== Body and #app Styling ========== */
 body {
-  min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
-  transition: color 0.5s, background-color 0.5s;
-  line-height: 1.6;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  font-size: 15px;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  color: var(--fg);
+  background: var(--bg-dark);
+
+  font-family: monospace;
+  font-size: 12px;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1em;
+  overflow: hidden;
+}
+
+#app::after {
+  content: " ";
+  position: absolute;
+  height: 200%;
+  width: 100%;
+  border: 10em solid var(--fg);
+  transform: rotate(-15deg);
+}
+
+#zeph-img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  animation: bounce 3s infinite ease-in-out;
+  transition: 0.25s ease;
+}
+
+/* ========== Generics ========== */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.window {
+  width: 250px;
+  min-height: 100px;
+  padding: 1em;
+  margin: 2em;
+
+  border: 1px solid var(--fg);
+  border-top: 1.5em solid var(--fg);
+  border-radius: 5px;
+
+  background-color: var(--bg);
+  max-width: 90vw;
+  transition: top 0.25s ease, bottom 0.25s ease, left 025s ease, right 025s ease;
+}
+
+.window.med {
+  width: 350px;
+}
+
+.window.large {
+  width: 500px;
+}
+
+.window.xlarge {
+  width: 850px;
+}
+
+.window.absolute {
+  position: absolute;
+}
+
+.window.tall {
+  height: 550px;
+}
+
+.window.xtall {
+  min-height: 550px;
+  height: max-content;
+}
+
+.window::before {
+  content: "close";
+  position: absolute;
+  top: -1.25em;
+  right: 0.25em;
+  color: var(--bg);
+  font-family: 'Material Icons';
+}
+
+.window-title {
+  position: absolute;
+  top: -1.25em;
+  left: 0.25em;
+  color: var(--bg);
+  font-size: 12px !important;
+}
+
+.flicker {
+  animation-name: flicker;
+  animation-iteration-count: infinite;
+}
+
+.grid {
+  background: linear-gradient(var(--fg) 1px, transparent 1px), linear-gradient(to right, var(--fg) 1px, transparent 1px);
+  background-size: 10px 10px;
+  /* min-width: 151px;
+  min-height: 151px; */
+  position: absolute;
+}
+
+.nav-container {
+  position: absolute;
+  /* box-sizing: content-box; */
+  top: 15vh;
+  left: 75vw;
+  width: calc(1.5em * 16) !important;
+  height: 7em !important;
+  min-height: unset;
+  max-width: 90vw;
+  /* border: 2px solid var(--fg); */
+  /* border-left: 0px; */
+  /* box-shadow: 5px 5px var(--fg); */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5em;
+  z-index: 5;
+}
+
+@media (max-width: 1500px) {
+  .nav-container {
+    left: unset;
+    right: 1em;
+  }
+}
+
+@media (max-width: 1100px) {
+  #zeph-img {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-container {
+    right: unset;
+    top: 0;
+  }
+}
+
+.nav-container * {
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+}
+
+/* ========== Even Generic-er Generics ========== */
+h1 {
+  font-size: 2em;
+  min-width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+h1::after {
+  content: " ";
+  height: 2px;
+  background-color: var(--fg);
+  width: 100%;
+  margin-left: 0.5em;
+  margin-top: 0.1em;
+}
+
+p {
+  margin-top: 0.5em;
+}
+
+p::first-letter {
+  padding-left: 1em;
+}
+
+a {
+  color: var(--red);
+  filter: brightness(0.5);
+}
+
+a:hover {
+  filter: brightness(1);
+}
+
+red {
+  color: var(--red);
+}
+
+yellow {
+  color: var(--yellow);
+}
+
+green {
+  color: var(--green);
+}
+
+blue {
+  color: var(--blue);
+}
+
+purple {
+  color: var(--purple);
+}
+
+/* ========== Transitions ========== */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* ========== Animations ========== */
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes flicker-once {
+  0% {
+    opacity: 0;
+  }
+  49% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  1% {
+    opacity: 0;
+  }
+  2% {
+    opacity: 1;
+  }
+  3% {
+    opacity: 0;
+  }
+  4% {
+    opacity: 1;
+  }
+  5% {
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  7% {
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  9% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  11% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 0;
+  }
+  16% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  26% {
+    opacity: 0;
+  }
+  29% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.5;
+  }
+  40% {
+    opacity: 0.5;
+  }
+  41% {
+    opacity: 1;
+  }
+  42% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  51% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  61% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  71% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  76% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  85% {
+    opacity: 0;
+  }
+  86% {
+    opacity: 1;
+  }
+  94% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
