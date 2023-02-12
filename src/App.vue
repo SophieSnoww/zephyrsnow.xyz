@@ -61,7 +61,7 @@ const gridCount = 8;
     <RouterLink to="/gallery">Gallery</RouterLink>
   </div>
 
-  <img src="/zeph.png" alt="" id="zeph-img" />
+  <img src="/bagel01.png" alt="" id="zeph-img" />
 </template>
 
 <style scoped>
