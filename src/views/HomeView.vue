@@ -30,4 +30,10 @@
     display: none;
   }
 }
+
+@media (max-width: 600px) and (max-height: 750px) {
+  .readme {
+    display: none;
+  }
+}
 </style>
