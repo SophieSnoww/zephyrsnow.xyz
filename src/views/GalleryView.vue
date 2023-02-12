@@ -73,6 +73,7 @@ let state = reactive({
   justify-content: space-evenly;
   overflow-y: scroll;
   height: 100%;
+  margin-bottom: 2em;
   gap: 25px;
 }
 
@@ -150,14 +151,15 @@ let state = reactive({
 
 @media (max-width: 700px) {
   .window {
-    width: min-content !important;
+    /* width: min-content !important; */
   }
 }
 
 @media (max-width: 600px) {
   .window {
-    margin-top: 10em;
-    height: 80vh !important;
+    margin-top: 20em;
+    margin-bottom: 15em;
+    height: 75vh !important;
   }
 }
 

@@ -57,15 +57,20 @@ body {
   height: 200%;
   width: 100%;
   border: 10em solid var(--fg);
-  transform: rotate(-15deg);
+  /* transform: rotate(-15deg); */
+  animation: sidebar-zoom 2s ease-out forwards;
 }
 
-#zeph-img {
+#zeph-img-container {
   position: absolute;
   left: 0;
   bottom: 0;
   animation: bounce 3s infinite ease-in-out;
   transition: 0.25s ease;
+}
+
+#zeph-img {
+  animation: fade-in 2s ease-out forwards;
 }
 
 /* ========== Generics ========== */
@@ -144,6 +149,7 @@ body {
   /* min-width: 151px;
   min-height: 151px; */
   position: absolute;
+  animation: spin-in 3s ease-out forwards;
 }
 
 .nav-container {
@@ -166,6 +172,8 @@ body {
   gap: 1.5em;
   z-index: 5;
 
+  animation: fade-in 1s ease-out;
+
   transition: opacity 0.5s ease;
 }
 
@@ -177,7 +185,7 @@ body {
 }
 
 @media (max-width: 1100px) {
-  #zeph-img {
+  #zeph-img-container {
     opacity: 0;
   }
 
@@ -271,7 +279,7 @@ purple {
 /* ========== Transitions ========== */
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease;
+  transition: opacity 1s ease;
 }
 
 .fade-enter-from,
@@ -280,12 +288,44 @@ purple {
 }
 
 /* ========== Animations ========== */
+@keyframes spin-in {
+  0% {
+    transform: scale(0) rotate(90deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes sidebar-zoom {
+  0% {
+    transform: scale(1.1) rotate(0deg);
+  }
+  100% {
+    transform: scale(1) rotate(-15deg);
+  }
+}
+
 @keyframes bounce {
   0% {
-    transform: scale(1);
+    transform: scale(1.01);
   }
   50% {
     transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.01);
   }
 }
 
