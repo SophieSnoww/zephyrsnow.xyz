@@ -20,7 +20,9 @@ axios.get(`/${route.params.imageName.replace('+', '.')}.json`).then((resp) => {
       <div class="window-title">~/pics/{{ $route.params.imageName.replace("+", ".") }}</div>
       <RouterLink to="/gallery" class="back-button"><span class="material-icons">arrow_back</span> Back</RouterLink>
       <div class="image-container">
-        <img :src="`/${$route.params.imageName.replace('+', '.')}`" alt="">
+        <img :src="`/${$route.params.imageName.replace('+', '.')}`" alt="" :style="{
+          imageRendering: state.info.imageRendering || 'unset'
+        }">
         <div class="image-info">
           <div class="artist-name">by {{ state.info.artist }}</div>
           <div class="artist-links">
