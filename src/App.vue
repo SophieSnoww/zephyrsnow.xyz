@@ -1,9 +1,14 @@
 <script setup>
+import { reactive } from 'vue';
 import { RouterView } from 'vue-router';
 
 const gridSize = 16;
 const itemSize = 1.5;
 const gridCount = 8;
+
+let state = reactive({
+  imageLoaded: false
+});
 </script>
 
 <template>
@@ -61,7 +66,11 @@ const gridCount = 8;
     <RouterLink to="/gallery">Gallery</RouterLink>
   </div>
 
-  <img src="/bagel01.png" alt="" id="zeph-img" />
+  <div id="zeph-img-container" :style="{
+    display: state.imageLoaded ? 'block' : 'none'
+  }">
+    <img src="/bagel01.png" alt="" id="zeph-img" @load="() => { state.imageLoaded = true; }" />
+  </div>
 </template>
 
 <style scoped>
