@@ -1,12 +1,28 @@
 <script setup>
 const images = [
   {
-    artist: "bagelcollie",
-    link: "zeph.png"
+    artist: "sunservals",
+    link: "sunservals01.png"
   },
   {
-    artist: "sunservals",
-    link: "sunservals_pfp.png"
+    artist: "bagelcollie",
+    link: "bagel01.png"
+  },
+  {
+    artist: "10nova_",
+    link: "10nova_01.jpg"
+  },
+  {
+    artist: "cocadope",
+    link: "coca01.png"
+  },
+  {
+    artist: "motheline",
+    link: "motheline01.png"
+  },
+  {
+    artist: "nebularobo",
+    link: "nebularobo01.gif"
   }
 ];
 </script>
@@ -26,9 +42,15 @@ const images = [
 </template>
 
 <style scoped>
+.window.xlarge.tall {
+  max-height: 85vh;
+  height: unset;
+}
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
   overflow-y: scroll;
   height: 100%;
   gap: 25px;
@@ -54,6 +76,7 @@ const images = [
   object-fit: cover;
   transform: scale(1);
   transition: 0.25s ease;
+  background-color: var(--bg);
 }
 
 .img-container:hover img {
@@ -73,5 +96,25 @@ const images = [
 
 .img-container:hover .artist-name {
   left: 0
+}
+
+@media (max-width: 1000px) {
+  .window {
+    width: unset !important;
+    min-width: unset !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .window {
+    width: min-content !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .window {
+    margin-top: 10em;
+    height: 80vh !important;
+  }
 }
 </style>
