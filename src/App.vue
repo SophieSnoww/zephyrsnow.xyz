@@ -48,16 +48,26 @@ let state = reactive({
     width: `calc(${itemSize * gridSize}em + 1px)`,
     height: `calc(${itemSize}em + 1px)`,
     top: `calc(10vh - ${i * itemSize}em)`,
-    left: `calc(70vw + ${i * itemSize}em)`
-  }"></div>
+    left: `calc(70vw + ${i * itemSize}em)`,
+    animationDelay: `${i * 0.05}s`
+  }" />
 
-  <div class="grid" :style="{
+  <div v-for="i in gridCount" class="grid left" :style="{
+    backgroundSize: `${itemSize}em ${itemSize}em`,
+    width: `calc(${itemSize * gridSize}em + 1px)`,
+    height: `calc(${itemSize}em + 1px)`,
+    top: `calc(85vh + ${i * itemSize}em)`,
+    left: `calc(15vw + ${i * itemSize}em)`,
+    animationDelay: `${i * 0.05}s`
+  }" />
+
+  <!-- <div class="grid" :style="{
     backgroundSize: `${itemSize}em ${itemSize}em`,
     width: `calc(${itemSize * gridSize}em + 1px)`,
     height: `calc(${itemSize * gridSize}em + 1px)`,
     left: '11vw',
     top: '85vh'
-  }"></div>
+  }" /> -->
 
   <div class="window nav-container">
     <div class="window-title">Navigate</div>
