@@ -47,14 +47,22 @@ let state = reactive({
           
           <div class="loading-stuff">
             <div class="loading-text">Loading...</div>
-            <div class="loading-circle" :style="{
-              animationDelay: `${index * 0.1}s`
-            }" />
+            <div class="loading-icon">
+              <div class="square" v-for="i in 5" :style="{
+                animationDelay: `${i * 0.025}s`
+                // animationDuration: `${(i * 0.025) + 2}s`
+              }" />
+            </div>
           </div>
 
-          <img :src="image.link" alt="" @load="() => { state.images[index].loaded = true; }" :style="{
-            opacity: image.loaded ? 1 : 0
-          }">
+          <img
+            :src="image.link"
+            alt=""
+            @load="() => { state.images[index].loaded = true; }"
+            :style="{
+              opacity: image.loaded ? 1 : 0
+            }"
+          />
         </RouterLink>
       </div>
     </div>
@@ -115,16 +123,32 @@ let state = reactive({
 }
 
 .loading-text {
-  font-size: 1.5em;
+  color: var(--fg);
 }
 
-.loading-circle {
+/* .loading-circle {
   margin-top: 2em;
   border-radius: 50%;
   width: 5em;
   height: 5em;
   border-top: 5px solid var(--fg);
   animation: rotate 2s linear infinite;
+} */
+
+.loading-icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.square {
+  --size: 7em;
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  border: 1px solid var(--fg);
+  animation: rotate 2s ease infinite;
 }
 
 .artist-name {
