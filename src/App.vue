@@ -4,7 +4,7 @@ import { RouterView } from 'vue-router';
 
 const gridSize = 16;
 const itemSize = 1.5;
-const gridCount = 8;
+const gridCount = 10;
 
 let state = reactive({
   imageLoaded: false
@@ -52,7 +52,7 @@ let state = reactive({
     animationDelay: `${i * 0.05}s`
   }" />
 
-  <div v-for="i in gridCount" class="grid left" :style="{
+  <div v-for="i in gridCount + 3" class="grid left" :style="{
     backgroundSize: `${itemSize}em ${itemSize}em`,
     width: `calc(${itemSize * gridSize}em + 1px)`,
     height: `calc(${itemSize}em + 1px)`,

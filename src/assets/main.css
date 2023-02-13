@@ -56,7 +56,7 @@ body {
   position: absolute;
   height: 200%;
   width: 100%;
-  border: 10em solid var(--fg);
+  border: 30em solid var(--fg);
   /* transform: rotate(-15deg); */
   animation: sidebar-zoom 2s ease-out forwards;
 }
