@@ -39,6 +39,7 @@ let state = reactive({
   <div class="window nav-container">
     <div class="window-title">Navigate</div>
     <RouterLink to="/">Home</RouterLink>
+    <RouterLink to="/commissions">Commissions</RouterLink>
     <RouterLink to="/links">Links</RouterLink>
     <RouterLink to="/gallery">Gallery</RouterLink>
   </div>
