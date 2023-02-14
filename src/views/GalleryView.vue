@@ -50,7 +50,6 @@ let state = reactive({
             <div class="loading-icon">
               <div class="square" v-for="i in 5" :style="{
                 animationDelay: `${i * 0.025}s`
-                // animationDuration: `${(i * 0.025) + 2}s`
               }" />
             </div>
           </div>
@@ -71,17 +70,18 @@ let state = reactive({
 
 <style scoped>
 .window.xlarge.tall {
-  max-height: 85vh;
-  height: unset;
+  min-height: unset;
+  max-height: unset !important;
+  height: unset !important;
 }
 
 .gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  overflow-y: scroll;
-  height: 100%;
-  margin-bottom: 2em;
+  /* overflow-y: scroll; */
+  /* height: 100%; */
+  padding-bottom: 1em;
   gap: 25px;
 }
 
@@ -126,15 +126,6 @@ let state = reactive({
   color: var(--fg);
 }
 
-/* .loading-circle {
-  margin-top: 2em;
-  border-radius: 50%;
-  width: 5em;
-  height: 5em;
-  border-top: 5px solid var(--fg);
-  animation: rotate 2s linear infinite;
-} */
-
 .loading-icon {
   position: absolute;
   display: flex;
@@ -166,24 +157,10 @@ let state = reactive({
   left: 0
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .window {
     width: unset !important;
     min-width: unset !important;
-  }
-}
-
-@media (max-width: 700px) {
-  .window {
-    /* width: min-content !important; */
-  }
-}
-
-@media (max-width: 600px) {
-  .window {
-    margin-top: 20em;
-    margin-bottom: 15em;
-    height: 75vh !important;
   }
 }
 
