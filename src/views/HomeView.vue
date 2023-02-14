@@ -25,7 +25,7 @@
 </template>
 
 <style scoped>
-@media (max-height: 600px) {
+/* @media (max-height: 600px) {
   .readme {
     display: none;
   }
@@ -36,4 +36,10 @@
     display: none;
   }
 }
+
+@media (max-width: 330px) {
+  .readme {
+    display: none;
+  }
+} */
 </style>
