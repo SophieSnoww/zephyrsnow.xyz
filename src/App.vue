@@ -52,5 +52,44 @@ let state = reactive({
 </template>
 
 <style scoped>
+.grid {
+  background: linear-gradient(var(--fg) 1px, transparent 1px), linear-gradient(to right, var(--fg) 1px, transparent 1px);
+  background-size: 10px 10px;
+  /* min-width: 151px;
+  min-height: 151px; */
+  position: absolute;
+  transform: scale(0);
+  animation: spin-in-right 3s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
 
+.grid.left {
+  animation: spin-in-left 3s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
+
+.nav-container {
+  position: absolute;
+  top: 15vh;
+  left: 70vw;
+  width: calc(1.5em * 20) !important;
+  min-height: 7em !important;
+  min-height: unset;
+  max-width: 90vw;
+  opacity: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  z-index: 5;
+
+  animation: fade-in 1s ease-out;
+
+  transition: opacity 0.5s ease;
+}
+
+.nav-container * {
+  font-size: 1.5em;
+  text-decoration: none;
+}
 </style>

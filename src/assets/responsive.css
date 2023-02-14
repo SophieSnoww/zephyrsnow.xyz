@@ -1,0 +1,42 @@
+/* ========== Responsive Design ========== */
+@media (max-width: 1500px) {
+  .nav-container {
+    left: unset !important;
+    right: 1em !important;
+  }
+}
+
+@media (max-width: 1100px) {
+  #zeph-img-container {
+    opacity: 0 !important;
+  }
+
+  .window {
+    transition: top 0.25s ease, bottom 0.25s ease, left 0.25s ease, right 0.25s ease, opacity 0.5s ease !important;
+  }
+
+  /* .nav-container {
+    opacity: 0.5 !important;
+  }
+
+  .nav-container:hover {
+    opacity: 1 !important;
+  } */
+  .nav-container {
+    right: unset !important;
+    top: 0 !important;
+    opacity: 1 !important;
+  }
+
+  .window:nth-of-type(1) {
+    margin-top: 150px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-container {
+    right: unset !important;
+    top: 0 !important;
+    opacity: 1 !important;
+  }
+}
