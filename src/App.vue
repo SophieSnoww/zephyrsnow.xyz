@@ -18,31 +18,6 @@ let state = reactive({
     </Transition>
   </RouterView>
 
-  <!-- <div class="window absolute flicker" :style="{
-    animationDuration: `${(Math.random() * 15) + 3}s`,
-    animationDelay: `-${Math.random() * 5}s`,
-    left: `${Math.floor(Math.random() * 20) + 1}vw`,
-    top: `${Math.floor(Math.random() * 33) + 1}vh`
-  }" />
-  <div v-if="Math.random() < 0.5" class="window absolute flicker" :style="{
-    animationDuration: `${(Math.random() * 15) + 3}s`,
-    animationDelay: `-${Math.random() * 5}s`,
-    left: `${Math.floor(Math.random() * 20) + 1}vw`,
-    top: `${Math.floor(Math.random() * 33) + 1}vh`
-  }" />
-  <div class="window absolute flicker" :style="{
-    animationDuration: `${(Math.random() * 15) + 3}s`,
-    animationDelay: `-${Math.random() * 5}s`,
-    left: `${Math.floor(Math.random() * 20) + 65}vw`,
-    top: `${Math.floor(Math.random() * 33) + 50}vh`
-  }" />
-  <div v-if="Math.random() < 0.5" class="window absolute flicker" :style="{
-    animationDuration: `${(Math.random() * 15) + 3}s`,
-    animationDelay: `-${Math.random() * 5}s`,
-    left: `${Math.floor(Math.random() * 20) + 65}vw`,
-    top: `${Math.floor(Math.random() * 33) + 50}vh`
-  }" /> -->
-
   <div v-for="i in gridCount" class="grid" :style="{
     backgroundSize: `${itemSize}em ${itemSize}em`,
     width: `calc(${itemSize * gridSize}em + 1px)`,
@@ -60,14 +35,6 @@ let state = reactive({
     left: `calc(15vw + ${i * itemSize}em)`,
     animationDelay: `${i * 0.05}s`
   }" />
-
-  <!-- <div class="grid" :style="{
-    backgroundSize: `${itemSize}em ${itemSize}em`,
-    width: `calc(${itemSize * gridSize}em + 1px)`,
-    height: `calc(${itemSize * gridSize}em + 1px)`,
-    left: '11vw',
-    top: '85vh'
-  }" /> -->
 
   <div class="window nav-container">
     <div class="window-title">Navigate</div>
