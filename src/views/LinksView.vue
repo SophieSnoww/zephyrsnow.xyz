@@ -5,20 +5,28 @@ const links = [
     name: 'Discord'
   },
   {
-    url: 'https://zephyrsnoww.tumblr.com',
-    name: 'Tumblr'
-  },
-  {
-    url: 'https://twitter.com/ZephyrSnoww',
-    name: 'Twitter'
-  },
-  {
     url: 'https://www.twitch.tv/zephyrsnoww',
     name: 'Twitch'
   },
   {
     url: 'https://www.youtube.com/channel/UC0ILzqgKK98lezPZzIrziEg',
     name: 'Youtube'
+  },
+  {
+    url: 'https://soundcloud.com/zephyr_ii',
+    name: 'Soundcloud (Sketch account)'
+  },
+  {
+    url: 'https://soundcloud.com/zephyrsnow',
+    name: 'Soundcloud (Main account)'
+  },
+  {
+    url: 'https://zephyrsnoww.tumblr.com',
+    name: 'Tumblr'
+  },
+  {
+    url: 'https://twitter.com/ZephyrSnoww',
+    name: 'Twitter'
   },
   {
     url: 'https://github.com/ZephyrSnoww',
