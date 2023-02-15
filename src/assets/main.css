@@ -84,6 +84,7 @@ body {
   justify-content: flex-start;
   z-index: 5;
   overflow-y: scroll;
+  overflow-x: hidden;
   width: 100%;
 }
 
