@@ -7,7 +7,9 @@ const itemSize = 1.5;
 const gridCount = 10;
 
 let state = reactive({
-  imageLoaded: false
+  imageLoaded: false,
+  sImage01Loaded: false,
+  sImage02Loaded: false
 });
 </script>
 
@@ -48,6 +50,18 @@ let state = reactive({
     display: state.imageLoaded ? 'block' : 'none'
   }">
     <img src="/bagel01.png" alt="" id="zeph-img" @load="() => { state.imageLoaded = true; }" />
+  </div>
+  
+  <!-- <div class="left-img img-container" :style="{
+    display: state.sImage01Loaded ? 'block' : 'none'
+  }">
+    <img src="/sunservals02.5.png" id="zeph-img" alt="" @load="() => { state.sImage01Loaded = true; }">
+  </div> -->
+  
+  <div class="right-img img-container" :style="{
+    display: state.sImage02Loaded ? 'block' : 'none'
+  }">
+    <img src="/sunservals02.png" id="zeph-img" alt="" @load="() => { state.sImage02Loaded = true; }">
   </div>
 </template>
 
@@ -91,5 +105,20 @@ let state = reactive({
 .nav-container * {
   font-size: 1.5em;
   text-decoration: none;
+}
+
+.img-container {
+  position: absolute;
+  animation: rotate-bounce 5s ease-in-out infinite;
+}
+
+.right-img {
+  right: -3vw;
+  bottom: 0vh;
+  transition: 0.5s ease;
+}
+
+.img-container img {
+  height: 60vh;
 }
 </style>
