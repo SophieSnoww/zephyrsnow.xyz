@@ -17,6 +17,7 @@
     <div class="window large">
       <div class="window-title">~/commissions/websites.txt</div>
       <h1>Websites</h1>
+      <p><b>Because I am mainly a hobbyist, there's a chance I'll gladly work on a project for you just for fun. I enjoy making websites a lot, and would love to make something for you!</b></p>
       <p>I'll gladly make you a website! I love working on projects with specific aesthetics or interesting visual concepts especially. Depending on what you want, I'll either give you completed HTML, CSS, and JS files for you to do what you want with, or I'll set up a domain name, hosting, and SSL certificate for you!</p>
       <p>Even if I'm not hosting your website, I'll gladly help you set it up wherever you want it!</p>
 
