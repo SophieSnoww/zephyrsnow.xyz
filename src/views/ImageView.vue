@@ -45,9 +45,9 @@ axios.get(`/${route.params.imageName.replace('+', '.')}.json`).then((resp) => {
 }
 
 .image-container {
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
-  max-height: 90vh;
+  max-height: 85vh;
 }
 
 .image-info {
