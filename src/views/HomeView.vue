@@ -13,7 +13,7 @@
     <div class="window large">
       <div class="window-title">~/home.txt</div>
       <h1>About.Me</h1>
-      <p>I'm Zephyr, a red white and black deer, and I use any pronouns. I live alone on a lush moon, in an outpost I built myself. I spend my time on plenty of things, including programming, engineering, making music, playing games, and editing videos.</p>
+      <p>I'm Zephyr, a red white and black deer, and I use any pronouns. I spend my time on plenty of things, including programming, making music, playing games, and editing videos.</p>
       <br /><br />
       <h1>Stuff.I.Program</h1>
       <p>I do a lot of web development, and I have experience with both front-end and back-end. I've written plenty of Discord bots, and random unfinished miscellanious projects - browser extensions, small video games, or mods for Minecraft and Terraria. My <a href="https://github.com/ZephyrSnoww" target="_blank">Github</a> has a few of these projects.</p>
