@@ -14,6 +14,16 @@ let state = reactive({
       loaded: false
     },
     {
+      artist: "sunservals",
+      link: "sunservals02.png",
+      loaded: false
+    },
+    {
+      artist: "sunservals",
+      link: "sunservals02.5.png",
+      loaded: false
+    },
+    {
       artist: "10nova_",
       link: "10nova_01.jpg",
       loaded: false
