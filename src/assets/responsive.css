@@ -7,7 +7,7 @@
 }
 
 @media (max-width: 1100px) {
-  #zeph-img-container {
+  #zeph-img-container, .right-img {
     opacity: 0 !important;
   }
 
