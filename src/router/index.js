@@ -4,6 +4,7 @@ import LinksView from '../views/LinksView.vue';
 import GalleryView from '../views/GalleryView.vue';
 import ImageView from '../views/ImageView.vue';
 import CommissionsView from '../views/CommissionsView.vue';
+import UtilView from '../views/UtilView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -39,6 +40,13 @@ const router = createRouter({
     {
       path: '/gallery/:imageName',
       component: ImageView,
+      meta: {
+        transition: 'fade'
+      }
+    },
+    {
+      path: '/util',
+      component: UtilView,
       meta: {
         transition: 'fade'
       }
