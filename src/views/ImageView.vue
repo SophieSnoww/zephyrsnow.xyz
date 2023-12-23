@@ -25,7 +25,7 @@ axios.get(`/${route.params.imageName.replace('+', '.')}.json`).then((resp) => {
         }">
         <div class="image-info">
           <div class="artist-name">by {{ state.info.artist }}</div>
-          <div class="artist-links">
+          <div class="artist-links" v-if="state.info.links.length > 0">
             <a v-for="link in state.info.links" target="_blank" :href="link.link" class="artist-link">{{ link.name }}</a>
           </div>
         </div>

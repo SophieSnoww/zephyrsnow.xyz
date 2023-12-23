@@ -4,28 +4,8 @@ import { reactive } from 'vue';
 let state = reactive({
   images: [
     {
-      artist: "sunservals",
-      link: "sunservals01.png",
-      loaded: false
-    },
-    {
-      artist: "bagelcollie",
-      link: "bagel01.png",
-      loaded: false
-    },
-    {
-      artist: "sunservals",
-      link: "sunservals02.png",
-      loaded: false
-    },
-    {
-      artist: "sunservals",
-      link: "sunservals02.5.png",
-      loaded: false
-    },
-    {
-      artist: "10nova_",
-      link: "10nova_01.jpg",
+      artist: "boingward",
+      link: "boingward01.png",
       loaded: false
     },
     {
@@ -34,13 +14,118 @@ let state = reactive({
       loaded: false
     },
     {
-      artist: "motheline",
-      link: "motheline01.png",
+      artist: "sinnple",
+      link: "sinnple01.png",
       loaded: false
     },
     {
       artist: "nebularobo",
       link: "nebularobo01.gif",
+      loaded: false
+    },
+    {
+      artist: "mynt-derg",
+      link: "mynt-derg03.png",
+      loaded: false
+    },
+    {
+      artist: "nking",
+      link: "nking01.png",
+      loaded: false
+    },
+    {
+      artist: "meeee :3",
+      link: "zephdance2.gif",
+      loaded: false
+    },
+    {
+      artist: "michi",
+      link: "michi01.png",
+      loaded: false
+    },
+    {
+      artist: "dividedanimus",
+      link: "dividedanimus01.png",
+      loaded: false
+    },
+    {
+      artist: "mynt-derg",
+      link: "mynt-derg01.jpg",
+      loaded: false
+    },
+    {
+      artist: "mynt-derg",
+      link: "mynt-derg02.png",
+      loaded: false
+    },
+    {
+      artist: "kosse",
+      link: "kosse01.png",
+      loaded: false
+    },
+    {
+      artist: "parotcardsroxy",
+      link: "parotcardsroxy01.png",
+      loaded: false
+    },
+    {
+      artist: "sunservals",
+      link: "sunservals01.png",
+      loaded: false
+    },
+    {
+      artist: "werewolfbarista",
+      link: "werewolfbarista01.png",
+      loaded: false
+    },
+    {
+      artist: "masi",
+      link: "masi01.png",
+      loaded: false
+    },
+    {
+      artist: "bagelcollie",
+      link: "bagel01.png",
+      loaded: false
+    },
+    {
+      artist: "kevinplays42",
+      link: "kevinplays4201.png",
+      loaded: false
+    },
+    {
+      artist: "nking",
+      link: "nking02.png",
+      loaded: false
+    },
+    {
+      artist: "sunservals",
+      link: "sunservals02.5.png",
+      loaded: false
+    },
+    {
+      artist: "sunservals",
+      link: "sunservals02.png",
+      loaded: false
+    },
+    {
+      artist: "mochabean",
+      link: "mocha01.png",
+      loaded: false
+    },
+    {
+      artist: "uovo0",
+      link: "uovo001.png",
+      loaded: false
+    },
+    {
+      artist: "motheline",
+      link: "motheline01.png",
+      loaded: false
+    },
+    {
+      artist: "10nova_",
+      link: "10nova_01.jpg",
       loaded: false
     }
   ]
