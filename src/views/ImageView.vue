@@ -60,6 +60,7 @@ axios.get(`/${route.params.imageName.replace('+', '.')}.json`).then((resp) => {
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5em;
+  width: 50%;
 }
 
 .artist-links {
@@ -81,5 +82,17 @@ axios.get(`/${route.params.imageName.replace('+', '.')}.json`).then((resp) => {
   width: 100%;
   max-height: 100%;
   object-fit: contain;
+}
+
+@media (max-width: 1100px) {
+  .image-container img {
+    padding-top: 125px !important; 
+  }
+
+  .window.xtall {
+    max-height: unset !important;
+    height: max-content !important;
+    min-height: max-content !important;
+  }
 }
 </style>
