@@ -1,124 +1,121 @@
 <script setup>
 import { reactive } from 'vue';
 import { RouterView } from 'vue-router';
-
-const gridSize = 16;
-const itemSize = 1.5;
-const gridCount = 10;
+import Window from './components/Window.vue';
 
 let state = reactive({
-  imageLoaded: false,
-  sImage01Loaded: false,
-  sImage02Loaded: false
+  mouseData: {
+    x: undefined,
+    y: undefined
+  },
+  windowData: {
+    draggingWindow: undefined,
+    1: {
+      top: 50,
+      left: 50,
+      enabled: true
+    }
+  }
 });
+
+function handleDrag (event, window) {
+  if (window) {
+    state.windowData[window].top += event.pageY - state.mouseData.y;
+    state.windowData[window].left += event.pageX - state.mouseData.x;
+
+    state.mouseData.y = event.pageY;
+    state.mouseData.x = event.pageX;
+  }
+}
 </script>
 
 <template>
-  <RouterView v-slot="{ Component, route }">
+  <!-- <RouterView v-slot="{ Component, route }">
     <Transition :name="route.meta.transition" mode="out-in">
       <component :is="Component" />
     </Transition>
-  </RouterView>
+  </RouterView> -->
+  <div class="app-container" @mousemove="(e) => handleDrag(e, state.windowData.draggingWindow)">
+    <img src="/wallpaper.jpg" alt="Wallpaper" class="wallpaper" />
 
-  <div v-for="i in gridCount" class="grid" :style="{
-    backgroundSize: `${itemSize}em ${itemSize}em`,
-    width: `calc(${itemSize * gridSize}em + 1px)`,
-    height: `calc(${itemSize}em + 1px)`,
-    top: `calc(10vh - ${i * itemSize}em)`,
-    left: `calc(70vw + ${i * itemSize}em)`,
-    animationDelay: `${i * 0.05}s`
-  }" />
+    <div class="taskbar">
+      <div class="taskbar-item taskbar-logo">
+        <img src="/icons/windows11.svg" alt="Windows logo" class="taskbar-logo-image">
+      </div>
 
-  <div v-for="i in gridCount + 3" class="grid left" :style="{
-    backgroundSize: `${itemSize}em ${itemSize}em`,
-    width: `calc(${itemSize * gridSize}em + 1px)`,
-    height: `calc(${itemSize}em + 1px)`,
-    top: `calc(85vh + ${i * itemSize}em)`,
-    left: `calc(15vw + ${i * itemSize}em)`,
-    animationDelay: `${i * 0.05}s`
-  }" />
+      <div class="taskbar-seperator"></div>
 
-  <div class="window nav-container">
-    <div class="window-title">Navigate</div>
-    <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/commissions">Commissions</RouterLink>
-    <RouterLink to="/links">Links</RouterLink>
-    <RouterLink to="/gallery">Gallery</RouterLink>
-  </div>
+      <div class="taskbar-item">
+        <img src="/icons/files.svg" alt="File browser" class="taskbar-files-image">
+      </div>
+      <div class="taskbar-item">
+        <img src="/icons/firefoxbrowser.svg" alt="Firefox logo" class="taskbar-browser-image">
+      </div>
+      <div class="taskbar-item" @click="(e) => state.windowData[1].enabled = !state.windowData[1].enabled">
+        <img src="/icons/sublimetext.svg" alt="Sublime text logo" class="taskbar-notepad-image">
+      </div>
+    </div>
 
-  <div id="zeph-img-container" :style="{
-    display: state.imageLoaded ? 'block' : 'none'
-  }">
-    <img src="/bagel01.png" alt="" id="zeph-img" @load="() => { state.imageLoaded = true; }" />
-  </div>
-  
-  <!-- <div class="left-img img-container" :style="{
-    display: state.sImage01Loaded ? 'block' : 'none'
-  }">
-    <img src="/sunservals02.5.png" id="zeph-img" alt="" @load="() => { state.sImage01Loaded = true; }">
-  </div> -->
-  
-  <div class="right-img img-container" :style="{
-    display: state.sImage02Loaded ? 'block' : 'none'
-  }">
-    <img src="/sunservals02.png" id="zeph-img" alt="" @load="() => { state.sImage02Loaded = true; }">
+    <!-- <div
+      class="window"
+      @mousedown="(e) => {
+        state.windowData.draggingWindow = 1;
+        state.mouseData.x = e.pageX;
+        state.mouseData.y = e.pageY;
+      }"
+      @mouseup="(e) => { state.windowData.draggingWindow = undefined; }"
+      :style="{
+        top: `${state.windowData[1].top}px`,
+        left: `${state.windowData[1].left}px`
+      }"
+    >
+      <div class="window-title">testing</div>
+      <div class="window-content">hi</div>
+    </div> -->
+
+    <Window v-if="state.windowData[1].enabled" :windowID="1" :state="state" title="Testing!">
+      <h1>hi</h1>
+      <p>hello. tis i. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo illo deserunt amet libero, temporibus aperiam minima, assumenda maxime facere impedit dolores eligendi laudantium. Deserunt earum amet veritatis dignissimos, doloremque animi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quaerat iste harum, aspernatur repellat at reiciendis! Repellat accusantium assumenda inventore, illo voluptates quae consequuntur enim natus repellendus, qui minima ea?</p>
+    </Window>
   </div>
 </template>
 
 <style scoped>
-.grid {
-  background: linear-gradient(var(--fg) 1px, transparent 1px), linear-gradient(to right, var(--fg) 1px, transparent 1px);
-  background-size: 10px 10px;
-  /* min-width: 151px;
-  min-height: 151px; */
-  position: absolute;
-  transform: scale(0);
-  animation: spin-in-right 3s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+.app-container {
+  width: 100vw;
+  height: 100vh;
 }
 
-.grid.left {
-  animation: spin-in-left 3s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+.wallpaper {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
 }
 
-.nav-container {
+.taskbar {
   position: absolute;
-  top: 15vh;
-  left: 70vw;
-  width: calc(1.5em * 20) !important;
-  min-height: 7em !important;
-  min-height: unset;
-  max-width: 90vw;
-  opacity: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 60px;
+  background-color: var(--bg);
 
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.5em;
-  z-index: 5;
-
-  animation: fade-in 1s ease-out;
-
-  transition: opacity 0.5s ease;
+  padding: 15px;
+  gap: 15px;
 }
 
-.nav-container * {
-  font-size: 1.5em;
-  text-decoration: none;
+.taskbar-item {
+  height: 100%;
+  flex: 0 0 30px;
 }
 
-.img-container {
-  position: absolute;
-  animation: rotate-bounce 5s ease-in-out infinite;
-}
-
-.right-img {
-  right: -3vw;
-  bottom: 0vh;
-  transition: 0.5s ease;
-}
-
-.img-container img {
-  height: 60vh;
+.taskbar-seperator {
+  height: 100%;
+  flex: 0 0 1px;
+  background-color: var(--fg);
+  margin: 0px 10px;
 }
 </style>
