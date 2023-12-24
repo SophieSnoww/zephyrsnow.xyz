@@ -6,6 +6,7 @@ let state = reactive({
     {
       artist: "boingward",
       link: "boingward01.png",
+      fanart: true,
       loaded: false
     },
     {
@@ -26,11 +27,13 @@ let state = reactive({
     {
       artist: "mynt-derg",
       link: "mynt-derg03.png",
+      fanart: true,
       loaded: false
     },
     {
       artist: "nking",
       link: "nking01.png",
+      fanart: true,
       loaded: false
     },
     {
@@ -51,11 +54,13 @@ let state = reactive({
     {
       artist: "mynt-derg",
       link: "mynt-derg01.jpg",
+      fanart: true,
       loaded: false
     },
     {
       artist: "mynt-derg",
       link: "mynt-derg02.png",
+      fanart: true,
       loaded: false
     },
     {
@@ -81,6 +86,7 @@ let state = reactive({
     {
       artist: "masi",
       link: "masi01.png",
+      fanart: true,
       loaded: false
     },
     {
@@ -91,11 +97,13 @@ let state = reactive({
     {
       artist: "kevinplays42",
       link: "kevinplays4201.png",
+      fanart: true,
       loaded: false
     },
     {
       artist: "nking",
       link: "nking02.png",
+      fanart: true,
       loaded: false
     },
     {
@@ -111,6 +119,7 @@ let state = reactive({
     {
       artist: "mochabean",
       link: "mocha01.png",
+      fanart: true,
       loaded: false
     },
     {
@@ -139,6 +148,11 @@ let state = reactive({
       <div class="gallery">
         <RouterLink class="img-container" :to="`/gallery/${image.link.replace('.', '+')}`" v-for="image, index in state.images">
           <div class="artist-name">{{ image.artist }}</div>
+          <div class="fanart-tag" v-if="image.fanart">
+            <div class="fanart-text">FANART -- </div>
+            <div class="fanart-text">FANART -- </div>
+            <div class="fanart-text">FANART -- </div>
+          </div>
           
           <div class="loading-stuff">
             <div class="loading-text">Loading...</div>
@@ -252,6 +266,26 @@ let state = reactive({
   left: 0
 }
 
+.fanart-tag {
+  position: absolute;
+  z-index: 1;
+  background-color: var(--yellow);
+  color: var(--fg);
+  font-size: 2em;
+  padding: 0.5em 0;
+  padding-bottom: 1em;
+  bottom: 0;
+  /* gap: 0.5em; */
+  display: flex;
+  transform: translate(-180px, 0px) rotate(45deg);
+}
+
+.fanart-text {
+  width: max-content;
+  animation: fanart-scroll 2s linear infinite;
+  padding-right: 0.5em;
+}
+
 @media (max-width: 1100px) {
   .window {
     width: unset !important;
@@ -265,6 +299,16 @@ let state = reactive({
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes fanart-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
   }
 }
 </style>
