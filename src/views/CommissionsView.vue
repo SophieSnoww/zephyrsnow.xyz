@@ -7,14 +7,43 @@
     <div class="window med">
       <div class="window-title">~/commissions/readme.txt</div>
       <h1>About</h1>
-      <p>While most of my projects are just things I do for fun, I'm open to working on something for you! Want a website? Need a song for something? Let me know!</p>
+      <p>I honestly can't give any concrete prices because most of what I do is just for fun. If you have an idea or see something I did and want me to do something similar for you, just talk to me about it! I might be down to just do it for fun anyways.</p>
       
       <br /><br />
       <h2>Contact</h2>
-      <p>If you're looking to commission me, DM or <a target="_blank" href="mailto:zephyr.snow@pm.me">email</a> me! I pay attention to Discord (Join <a target="_blank" href="https://discord.gg/AmqvmdMYWE">my server</a> or message Zephyr#9876) the most.</p>
+      <p>If you're looking to commission me, DM or <a target="_blank" href="mailto:zephyr.snow@pm.me">email</a> me! I pay attention to Discord (Join <a target="_blank" href="https://discord.gg/AmqvmdMYWE">my server</a> or message @zephyrsnoww) the most.</p>
     </div>
 
     <div class="window large">
+      <div class="window-title">~/commissions/programming.txt</div>
+      <h1>Programming</h1>
+      <p>I do a lot of different types of programming, some more often than others. Here's some of the stuff I've done that you might want me to do for you:</p>
+      
+      <br />
+      <ul>
+        <li>Website development & hosting</li>
+        <li>Discord bot development</li>
+        <li>Software development</li>
+        <li>Macro programming</li>
+        <li>Game development</li>
+        <li>Game mod development (a bit)</li>
+        <li>Shader development (a tiny bit)</li>
+      </ul>
+    </div>
+
+    <div class="window large">
+      <div class="window-title">~/commissions/audio.txt</div>
+      <h1>Audio</h1>
+      <p>I make music occasionally, mostly weird stuff. I also enjoy making sound effects. I wouldn't call myself a professional by any means - most of the time I just open Ableton and mess around for a few hours - but if you happen to like something I made and want me to make something for you, let me know!</p>
+    </div>
+
+    <div class="window large">
+      <div class="window-title">~/commissions/graphics.txt</div>
+      <h1>Graphics</h1>
+      <p>I do a decent amount of graphic design, whether that's just cool looking images or designing stream layouts. Again, I can't really give any concrete prices, but let me know if you happen to be interested.</p>
+    </div>
+
+    <!-- <div class="window large">
       <div class="window-title">~/commissions/websites.txt</div>
       <h1>Websites</h1>
       <p><b>Because I am mainly a hobbyist, there's a chance I'll gladly work on a project for you just for fun. I enjoy making websites a lot, and would love to make something for you!</b></p>
@@ -58,7 +87,7 @@
       <div class="window-title">~/commissions/music.txt</div>
       <h1>Music</h1>
       <p>I really only do music production as a hobby, but if you like what I make and want me to work on something for you, I'd love to give it a shot! I can't really give any concrete prices here, and knowing me, I'm probably down to work on something just for fun. Just shoot me a DM!</p>
-    </div>
+    </div> -->
   </div>
 </template>
 
