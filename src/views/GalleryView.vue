@@ -15,8 +15,8 @@ let state = reactive({
       loaded: false
     },
     {
-      artist: "sinnple",
-      link: "sinnple01.png",
+      artist: "pastacrylic",
+      link: "pastacrylic01.png",
       loaded: false
     },
     {
@@ -49,6 +49,11 @@ let state = reactive({
     {
       artist: "dividedanimus",
       link: "dividedanimus01.png",
+      loaded: false
+    },
+    {
+      artist: "sinnple",
+      link: "sinnple01.png",
       loaded: false
     },
     {
